@@ -35,7 +35,7 @@ namespace ProyectoAtencion.Account
                             }
                             else
                             {
-                                ltMessage.Text = "Invalid Activation code.";
+                                ltMessage.Text = "codigo de activacion invalidad.";
                             }
                         }
                     }

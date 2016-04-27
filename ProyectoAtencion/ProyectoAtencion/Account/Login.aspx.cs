@@ -37,10 +37,10 @@ namespace ProyectoAtencion.Account
                 switch (userId)
                 {
                     case -1:
-                        Login1.FailureText = "Username and/or password is incorrect.";
+                        Login1.FailureText = "nombre o contraseñas incorrecta.";
                         break;
                     case -2:
-                        Login1.FailureText = "Account has not been activated.";
+                        Login1.FailureText = "Esta cuenta no esta activada.";
                         break;
                     default:
                         FormsAuthentication.RedirectFromLoginPage(Login1.UserName, Login1.RememberMeSet);

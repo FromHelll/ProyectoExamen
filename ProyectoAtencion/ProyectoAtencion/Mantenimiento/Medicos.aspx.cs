@@ -15,7 +15,7 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(2, userid);
+            DataTable permisos = per.tienePermiso(2, 9);
             string consultar = permisos.Rows[0]["consultar"].ToString();
             string agregar = permisos.Rows[0]["agregar"].ToString();
             string editar = permisos.Rows[0]["editar"].ToString();
