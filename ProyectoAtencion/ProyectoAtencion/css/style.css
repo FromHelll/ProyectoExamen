@@ -1,0 +1,15 @@
+.espacio {
+	margin: 55px;
+}
+body {
+	background-color:blue;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2rem;
+}
+th {
+    border-color: #55595c;
+    text-align: left;
+}
+.table-inverse {
+    color: #eceeef;
+}
