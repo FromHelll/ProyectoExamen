@@ -16,44 +16,50 @@ namespace ProyectoAtencion
             TxtFecha.Text = "" + DateTime.Now;
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(3, userid);
-            string consultar = permisos.Rows[0]["consultar"].ToString();
-            string agregar = permisos.Rows[0]["agregar"].ToString();
-            string editar = permisos.Rows[0]["editar"].ToString();
-            string eliminar = permisos.Rows[0]["eliminar"].ToString();
+            DataTable permisos = per.tienePermiso(6, userid);
 
-            if (Convert.ToInt32(consultar) == 1)
+
+            if (permisos.Rows.Count == 0)
             {
-               
+
+                Labelpermiso.Text = "No tiene ningun permisos";
+                theDiv.Visible = false;
             }
             else
             {
-                
+                string consultar = permisos.Rows[0]["consultar"].ToString();
+                string agregar = permisos.Rows[0]["agregar"].ToString();
+                string editar = permisos.Rows[0]["editar"].ToString();
+                string eliminar = permisos.Rows[0]["eliminar"].ToString();
+                if (Convert.ToInt32(consultar) == 1)
+                {
+                    theDiv.Visible = true;
+                }
+                else
+                {
+                    theDiv.Visible = false;
+
+                }
+              
+                if (Convert.ToInt32(agregar) == 1)
+                {
+                    BTNNuevo.Enabled = true;
+                }
+                else
+                {
+                    BTNNuevo.Enabled = false;
+                }
+                if (Convert.ToInt32(editar) == 1)
+                {
+                    BTNModificar.Enabled = true;
+                }
+                else
+                {
+                    BTNModificar.Enabled = false;
+                }
+              
             }
-            if (Convert.ToInt32(agregar) == 1)
-            {
-                BTNNuevo.Enabled = true;
-            }
-            else
-            {
-                BTNNuevo.Enabled = false;
-            }
-            if (Convert.ToInt32(editar) == 1)
-            {
-                BTNModificar.Enabled = true;
-            }
-            else
-            {
-                BTNModificar.Enabled = false;
-            }
-            if (Convert.ToInt32(eliminar) == 1)
-            {
-                
-            }
-            else
-            {
-               
-            }
+
         }
 
         protected void BTNNuevo_Click(object sender, EventArgs e)

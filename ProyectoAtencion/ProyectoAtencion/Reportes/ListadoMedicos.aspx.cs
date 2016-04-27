@@ -15,21 +15,19 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(6, 9);
-            
+            DataTable permisos = per.tienePermiso(6, userid);
+
 
             if (permisos.Rows.Count == 0)
             {
-          
+
                 Labelpermiso.Text = "No tiene ningun permisos";
                 theDiv.Visible = false;
             }
             else
             {
                 string consultar = permisos.Rows[0]["consultar"].ToString();
-                string agregar = permisos.Rows[0]["agregar"].ToString();
-                string editar = permisos.Rows[0]["editar"].ToString();
-                string eliminar = permisos.Rows[0]["eliminar"].ToString();
+
                 if (Convert.ToInt32(consultar) == 1)
                 {
                     theDiv.Visible = true;
@@ -40,8 +38,6 @@ namespace ProyectoAtencion
                     Labelpermiso.Text = "No tiene permisos para ver las listas";
                 }
             }
-               
-            
         }
     }
 }

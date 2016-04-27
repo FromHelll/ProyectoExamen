@@ -15,44 +15,66 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(2, 9);
-            string consultar = permisos.Rows[0]["consultar"].ToString();
-            string agregar = permisos.Rows[0]["agregar"].ToString();
-            string editar = permisos.Rows[0]["editar"].ToString();
-            string eliminar = permisos.Rows[0]["eliminar"].ToString();
+            DataTable permisos = per.tienePermiso(6, userid);
 
-            if (Convert.ToInt32(consultar) == 1)
+
+            if (permisos.Rows.Count == 0)
             {
-                BTNConsultar.Enabled = true;
+
+                Labelpermiso.Text = "No tiene ningun permisos";
+                theDiv.Visible = false;
             }
             else
             {
-                BTNConsultar.Enabled = false;
+                string consultar = permisos.Rows[0]["consultar"].ToString();
+                string agregar = permisos.Rows[0]["agregar"].ToString();
+                string editar = permisos.Rows[0]["editar"].ToString();
+                string eliminar = permisos.Rows[0]["eliminar"].ToString();
+                if (Convert.ToInt32(consultar) == 1)
+                {
+                    theDiv.Visible = true;
+                }
+                else
+                {
+                    theDiv.Visible = false;
+                   
+                }
+                if (Convert.ToInt32(consultar) == 1)
+                {
+                    BTNConsultar.Enabled = true;
+                }
+                else
+                {
+                    BTNConsultar.Enabled = false;
+                }
+                if (Convert.ToInt32(agregar) == 1)
+                {
+                    BTNNuevo.Enabled = true;
+                }
+                else
+                {
+                    BTNNuevo.Enabled = false;
+                }
+                if (Convert.ToInt32(editar) == 1)
+                {
+                    BTNModificar.Enabled = true;
+                }
+                else
+                {
+                    BTNModificar.Enabled = false;
+                }
+                if (Convert.ToInt32(eliminar) == 1)
+                {
+                    BTNEliminar.Enabled = true;
+                }
+                else
+                {
+                    BTNEliminar.Enabled = false;
+                }
             }
-            if (Convert.ToInt32(agregar) == 1)
-            {
-                BTNNuevo.Enabled = true;
-            }
-            else
-            {
-                BTNNuevo.Enabled = false;
-            }
-            if (Convert.ToInt32(editar) == 1)
-            {
-                BTNModificar.Enabled = true;
-            }
-            else
-            {
-                BTNModificar.Enabled = false;
-            }
-            if (Convert.ToInt32(eliminar) == 1)
-            {
-                BTNEliminar.Enabled = true;
-            }
-            else
-            {
-                BTNEliminar.Enabled = false;
-            }
+            
+
+            
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)

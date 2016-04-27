@@ -7,9 +7,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>Consultas</h1>
+    <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
 
-<br />
+    <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
 <rsweb:reportviewer ID="ReportViewerListaCitas" runat="server" 
     Font-Names="Verdana" Font-Size="8pt" InteractiveDeviceInfos="(Colección)" 
     WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="95%">
@@ -25,5 +25,5 @@
 </asp:ObjectDataSource>
 <br />
 <br />
-
+</div>
 </asp:Content>

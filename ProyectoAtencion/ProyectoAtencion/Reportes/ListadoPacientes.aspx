@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
-<h1>LISTADO PACIENTES</h1>
+
     <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
     <hr />
 

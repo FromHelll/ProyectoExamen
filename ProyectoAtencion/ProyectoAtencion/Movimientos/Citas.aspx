@@ -47,9 +47,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h1>CITAS MEDICAS</h1>
-    <hr />
-    <br />
+   <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
+    <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
     <table class="style1">
         <tr>
             <td class="style2">
@@ -187,5 +186,5 @@
 
 
     <br />
-
+        </div>
 </asp:Content>
