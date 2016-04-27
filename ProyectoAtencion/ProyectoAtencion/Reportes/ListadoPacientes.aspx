@@ -3,7 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
 <h1>LISTADO PACIENTES</h1>
+    <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
     <hr />
 
     <br />
@@ -21,5 +23,5 @@
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
         SelectMethod="GetPacientes" TypeName="CADCitasUM.CADPacientes" OldValuesParameterFormatString="original_{0}">
     </asp:ObjectDataSource>
-
+        </div>
 </asp:Content>
