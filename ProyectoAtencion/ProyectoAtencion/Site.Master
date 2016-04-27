@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ProyectoAtencion.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                Univerisdad NUR
+                </h1>
+                <h1>
+                Citas Medicas
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        bienvenido(a) <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
+                      
+                    
+                        <asp:MenuItem NavigateUrl="~/Movimientos/Citas.aspx" Text="Consultas"/>
+                        <asp:MenuItem NavigateUrl="~/Reportes/ListdoConsultas.aspx" Text="Listado Consultas"/>
+                      
+                       
+                        <asp:MenuItem NavigateUrl="~/Mantenimiento/Medicos.aspx" Text="Medicos"/>
+                        <asp:MenuItem NavigateUrl="~/Reportes/ListadoMedicos.aspx" Text="Listado Medicos"/>
+                        <asp:MenuItem NavigateUrl="~/Mantenimiento/Pacientes.aspx" Text="Pacientes"/>
+                        <asp:MenuItem NavigateUrl="~/Reportes/ListadoPacientes.aspx" Text="Listado Pacientes"/>
+                        
+                        <asp:MenuItem NavigateUrl="~/Account/Register.aspx" Text="Registrarse"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
