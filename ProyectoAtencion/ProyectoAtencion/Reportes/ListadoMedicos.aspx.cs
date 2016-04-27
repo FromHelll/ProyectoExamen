@@ -15,7 +15,7 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(6, userid);
+            DataTable permisos = per.tienePermiso(9, userid);
 
 
             if (permisos.Rows.Count == 0)

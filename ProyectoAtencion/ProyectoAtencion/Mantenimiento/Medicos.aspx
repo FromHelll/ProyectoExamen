@@ -21,10 +21,8 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
     <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
     <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
-        <hr />
 
         <table class="style1">
             <tr>

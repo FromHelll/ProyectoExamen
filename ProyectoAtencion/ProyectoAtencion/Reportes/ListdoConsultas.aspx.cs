@@ -15,12 +15,12 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(6, userid);
-
+            DataTable permisos = per.tienePermiso(8, userid);
+      
 
             if (permisos.Rows.Count == 0)
             {
-
+                Label1.Text ="hola" +Convert.ToString(userid);
                 Labelpermiso.Text = "No tiene ningun permisos";
                 theDiv.Visible = false;
             }

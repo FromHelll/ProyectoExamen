@@ -9,6 +9,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:Label ID="Labelpermiso" runat="server" Text="Label"></asp:Label>
 
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    
     <div runat="server" id="theDiv" style="width: 95%; height: 95%;">
 <rsweb:reportviewer ID="ReportViewerListaCitas" runat="server" 
     Font-Names="Verdana" Font-Size="8pt" InteractiveDeviceInfos="(Colección)" 

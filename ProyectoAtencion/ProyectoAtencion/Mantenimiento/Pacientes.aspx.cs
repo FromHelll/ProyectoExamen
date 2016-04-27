@@ -17,7 +17,7 @@ namespace ProyectoAtencion
         {
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(6, userid);
+            DataTable permisos = per.tienePermiso(1, userid);
 
 
             if (permisos.Rows.Count == 0)
@@ -32,15 +32,7 @@ namespace ProyectoAtencion
                 string agregar = permisos.Rows[0]["agregar"].ToString();
                 string editar = permisos.Rows[0]["editar"].ToString();
                 string eliminar = permisos.Rows[0]["eliminar"].ToString();
-                if (Convert.ToInt32(consultar) == 1)
-                {
-                    theDiv.Visible = true;
-                }
-                else
-                {
-                    theDiv.Visible = false;
-
-                }
+              
                 if (Convert.ToInt32(consultar) == 1)
                 {
                     BTNConsultar.Enabled = true;

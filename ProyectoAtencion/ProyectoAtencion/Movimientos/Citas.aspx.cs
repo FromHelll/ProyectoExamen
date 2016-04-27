@@ -16,7 +16,7 @@ namespace ProyectoAtencion
             TxtFecha.Text = "" + DateTime.Now;
             CADPermisos per = new CADPermisos();
             int userid = Account.Login.userId;
-            DataTable permisos = per.tienePermiso(6, userid);
+            DataTable permisos = per.tienePermiso(3, userid);
 
 
             if (permisos.Rows.Count == 0)
